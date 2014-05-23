@@ -2,6 +2,81 @@ X-editable changelog
 =============================
 
 
+Version 1.5.1 Nov 4, 2013
+----------------------------
+[enh #371] submit single field (vitalets)
+[bug] select2: placeholder not shown if value initially empty (vitalets)
+[enh #400] allow `validate` to change submitted value, also fix #354 (vitalets)
+[enh #396] bs3 popover: placement `auto` (vitalets)
+[bug #357] select2: tags mode with space separator (vitalets)
+[bug #374] dateui: clear button does not submit (vitalets)
+
+
+Version 1.5.0 Oct 1, 2013
+----------------------------
+[enh #362] add twitter typeahead.js (vitalets)
+[enh] select: add `sourceOptions` to modify source request method and params (vitalets)
+[enh #377] add bool option `escape` to allow html as content (vitalets)
+[bug #344] fix determing empty for html content (vitalets)
+[enh] update select2 to 3.4.3 (vitalets)
+[enh #343] Bootstrap 3 support (vitalets)
+
+
+Version 1.4.6 Aug 8, 2013
+----------------------------
+[bug #312] can't apply selector more than once (vitalets)
+[enh #48] textarea: use `white-space: pre-wrap` instead of nl2br conversion (vitalets)
+[enh #286] added HTML5 time input (Doggie52)
+[enh] add `defaultValue` option (vitalets)
+[enh #313] add composer support (masim)
+[enh #300] Fix 'bootstrap popover falls off page if editable is too close to window edge' (belerweb)
+[enh #302] allow data-datepicker and data-datetimepicker (vitalets)
+[enh #287] add option to disable item in select (vitalets)
+[enh #281] add collision flag to adjust tooltip position (vitalets)
+[bug #279] fix jQuery UI tooltip z-index to be less than select2 dropdown (vitalets)
+[bug #276] support id() and text() functions of select2 (vitalets)
+
+
+Version 1.4.5 Jun 23, 2013
+----------------------------
+[enh #245] highlight element after update (vitalets)
+[enh] select2 now works with ajax source (vitalets)
+[bug] fix datefield (datetimefield) to return null for incorrect dates (vitalets)
+[bug #224] do not close popup when it is saving value (vitalets)
+[enh] added `submitValue` to `save` event params (vitalets)
+[enh #259] allow `getValue` method to return value itself, not object (vitalets)
+[enh] add `destroy` method to inputs (vitalets)
+[enh #164] allow emptytext to be html (vitalets)
+[enh #78] allow html in editable content (vitalets)
+[enh] update container position when datetimepicker viewMode changes (vitalets)
+[enh #255] remove xxxView options from first level config of datetimepicker (vitalets)
+[enh] if `display` defined as function call it on init (vitalets)
+[enh #218] sourceCache now disables cache totally (vitalets)
+[bug #156] solve conflict of bootstrap datepicker and jQuery UI datepicker (vitalets)
+[enh] update bootstrap-datepicker to 1.1.2 (vitalets)
+[enh] allow follow links in disabled state (vitalets)
+[enh] update combodate to 1.0.4, fix #222 (vitalets)
+
+
+Version 1.4.4 May 4, 2013
+----------------------------
+[enh #219] added `error` callback (joekaiser)
+[enh #198] new value of showbuttons: 'bottom' (vitalets)
+[enh #192] add class editable-popup to have diferent css for popup and inline (vitalets)
+[enh] update to bootstrap-datepicker 1.0.2 (vitalets)
+[enh] update to combodate 1.0.3 with yearDescending and roundTime options (vitalets)
+[enh] add 'use strict' directive (vitalets)
+[enh #202] allow pk=0 (mdeweerd)
+[enh #183] move datepicker icon to center of button (vitalets)
+[enh] upgrade to select2 3.3.2 (vitalets)
+[enh #176] update to bootstrap 2.3.1 (vitalets)
+[bug #171] clear in date & datetime when showbuttons=false (vitalets)
+[bug #166] clear button for input type=number (vitalets)
+[bug #65] checklist don't show checked for single value (vitalets)
+[enh #188] added bootstrap datetime (adeg, vitalets)
+[bug] editable-poshytip on inline mode tries to write in $.Poshytip (vitalets)
+
+
 Version 1.4.3 Mar 8, 2013
 ----------------------------
 [bug #32] hotfix for jQuery UI 1.9+ (vitalets)
