@@ -342,6 +342,7 @@ class EipHelper extends AppHelper {
 			'format',
 			'viewformat',
 			'datepicker',
+			'inputclass',
 			// data source for select / checklist
 			'source',
 			'sourceCache',
@@ -354,7 +355,14 @@ class EipHelper extends AppHelper {
 			}
 		}
 
-		$this->js .= '$("#' . $elementId . '").editable(' . $this->Js->object($jsOptions) . ');';
+		if (!empty($displayFunction)) {
+			$jsOptions['display'] = '::displayFunction::';
+		}
+		$js = '$("#' . $elementId . '").editable(' . $this->Js->object($jsOptions) . ');';
+		if (!empty($displayFunction)) {
+			$js = preg_replace('/[\'"]?\:\:displayFunction\:\:[\'"]?/', $displayFunction, $js);
+		}
+		$this->js .= $js;
 
 		// return URL
 		// note: wrapped with data-* attributes for
