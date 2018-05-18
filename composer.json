@@ -1,0 +1,8 @@
+{
+  "name": "audiologyholdings/eip",
+  "description": "Edit in Place Plugin (Helper/Component) for CakePHP (requires jquery)",
+  "type": "cakephp-plugin",
+  "require": {
+    "cakephp/cakephp": ">=2.5.5.4 <3.0.0"
+  }
+}
