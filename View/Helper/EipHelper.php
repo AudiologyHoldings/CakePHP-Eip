@@ -281,7 +281,7 @@ class EipHelper extends AppHelper {
 		}
 
 		// generate an elementId
-		$elementId = $key = 'eip_' . String::uuid();
+		$elementId = $key = 'eip_' . CakeText::uuid();
 
 		// generate a secure hash
 		// TODO: secure further by integrating session id into $hash

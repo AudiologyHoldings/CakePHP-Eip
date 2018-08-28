@@ -36,16 +36,20 @@ class EipComponentTest extends CakeTestCase {
 	}
 
 
-	/**
-	 * EipComponentTest::testSetupData()
-	 *
-	 * @expectedException EipDataException
-	 * @return void
-	 */
-	public function testSetupDataInvalid() {
-		$is = $this->Controller->TestEip->setupData();
-
-	}
+    /**
+     * EipComponentTest::testSetupData()
+     *
+     * @return void
+     */
+    public function testSetupDataInvalid() {
+        $expected = 'not saved: missing modelName from $data';
+        try{
+            $this->Controller->TestEip->setupData();
+            $this->fail('No exception thrown');
+        } catch (EipDataException $e) {
+            $this->assertEquals($expected, $e->getMessage());
+        }
+    }
 
 	/**
 	 * EipComponentTest::testSetupData()

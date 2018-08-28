@@ -54,15 +54,20 @@ class EipHelperTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
-	/**
-	 * testInput bad inputs
-	 *
-	 * @expectedException OutOfBoundsException
-	 * @return void
-	 */
-	public function testInputBad() {
-		$result = $this->Eip->input('FieldOnly');
-	}
+    /**
+     * testInput bad inputs
+     *
+     * @return void
+     */
+    public function testInputBad() {
+        $expected = 'EipHelper::input() invalid $path arg, should be "Model.field"';
+        try{
+            $this->Eip->input('FieldOnly');
+            $this->fail('No exception thrown');
+        } catch(OutOfBoundsException $e) {
+            $this->assertEquals($expected, $e->getMessage());
+        }
+    }
 
 	/**
 	 * testInput good inputs
@@ -72,21 +77,21 @@ class EipHelperTest extends CakeTestCase {
 	public function testInputGood() {
 		$result = $this->Eip->input('User.email', $this->user);
 		$pattern = '#<span href="\#eip" id="eip\_[a-f0-9\-]{36}" class="eip-wrap" data-pk="user-1" data-type="text" title="">user1@example.com</span>#';
-		$this->assertPattern($pattern, $result);
+		$this->assertRegExp($pattern, $result);
 		$result = $this->Eip->input('Profile.zip', $this->user);
 
 		$pattern = '#<span href="\#eip" id="eip\_[a-f0-9\-]{36}" class="eip-wrap" data-pk="profile-1" data-type="text" title="">40202</span>#';
-		$this->assertPattern($pattern, $result);
+		$this->assertRegExp($pattern, $result);
 
 		// this wont work, we aren't smart enough for this path :(
 		//$result = $this->Eip->input('Category.0.name', $this->user);
 		// but this would:
 		$result = $this->Eip->input('Category.name', array('Category' => $this->user['Category'][0]));
 		$pattern = '#<span href="\#eip" id="eip\_[a-f0-9\-]{36}" class="eip-wrap" data-pk="cat1" data-type="text" title="">cat one</span>#';
-		$this->assertPattern($pattern, $result);
+		$this->assertRegExp($pattern, $result);
 		$result = $this->Eip->input('Category.name', array('Category' => $this->user['Category'][1]));
 		$pattern = '#<span href="\#eip" id="eip\_[a-f0-9\-]{36}" class="eip-wrap" data-pk="cat2" data-type="text" title="">cat two</span>#';
-		$this->assertPattern($pattern, $result);
+		$this->assertRegExp($pattern, $result);
 		// TODO: stub out the Html helper and verify JS
 	}
 
