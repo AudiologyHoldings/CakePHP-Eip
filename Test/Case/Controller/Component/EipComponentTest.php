@@ -1,5 +1,5 @@
 <?php
-App::uses('EipComponent', 'Eip.Controller/Component');
+App::import('Eip.Controller/Component', 'EipComponent');
 App::uses('Controller', 'Controller');
 
 class EipDataException extends CakeException {
